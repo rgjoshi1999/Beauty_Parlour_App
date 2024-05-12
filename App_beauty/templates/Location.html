@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Location{% endblock title %}
+
+{% block body %}
+
+{% load static %}
+  <div style="background-image: url('{% static 'images/back5.jpg' %}'); background-size: cover; background-position: center;">
+
+          <h1 style="font-size:6em; font-weight:bold;font-style: italic;
+          color:black; margin-left:550px;margin-bottom:40px;">Locate Us</h1>
+
+<div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.4943284148826!2d77.
+55059877900977!3d19.903563333723614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd10b403d485ae1%3A0xcd870a680019920f!2z4KS14KWI4KS24KS-4KSy4KWAIOCkrOCljeCkr-ClgeCkn-ClgCDgpKrgpL7gpLDgpY3gpLLgpLA!5e0!3m2!1smr!2sin!4v1714755380228!5m2!1smr!2sin"
+             width="100%" height="450" style="border:0;"
+             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+<div class="custom-image">
+    <img src="{% static 'images/in1.jpg' %}" style="width: 409px; height:400px; object-fit: cover; margin-left:67px; margin-top:20px; margin-bottom:20px;">
+        <img src="{% static 'images/in5.jpg' %}" style="width: 409px; height:400px; object-fit: cover;margin-left:67px;margin-top:20px; margin-bottom:20px;">
+        <img src="{% static 'images/in4.jpg' %}" style="width: 409px; height:400px; object-fit: cover;margin-left:67px;margin-top:20px; margin-bottom:20px;">
+
+</div>
+{% endblock body %}

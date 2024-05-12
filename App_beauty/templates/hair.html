@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Hair{% endblock title %}
+{% block body %}
+<style>
+     .custom-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-left:9px;
+    }
+    .custom-container img {
+        width: 409px;
+        height: 350px;
+        object-fit: cover;
+        margin-top:30px;
+    }
+    .nav-item {
+        text-align: center;
+    }
+</style>
+{% load static %}
+<div style="background-image: url('{% static 'images/back5.jpg' %}'); background-size: cover; background-position: center; width: 100%; height: 250px; position: relative;">
+    <h1 style="color:white; font-size: 55px; text-align: center; position: absolute; top: 15%; left: 38%; transform: translate(-50%, -50%);"><b>Love your hair</b></h1>
+    <h3 style="color:white; font-size: 25px; text-align: center; position: absolute; top: 65%; left: 38%; transform: translate(-50%, -50%);">Experience the beauty within you,<br>manifested in how much you love yourself,<br>how much you take care of yourself.</h3>
+</div>
+<div class="custom-container">
+    <div>
+        <img src="{% static 'images/cut.jpg' %}" alt="Hair Image">
+        <h3><b><a class="nav-link active" aria-current="page" href="{% url 'cut_all' %}" style="margin-left:140px;">Hair Cut</a></b></h3>
+    </div>
+    <div>
+        <img src="{% static 'images/color.jpg' %}" alt="Skin Image">
+        <h3><b><a class="nav-link active" aria-current="page" href="{% url 'hair_color' %}" style="margin-left:148px;">Hair Color</a></b></h3>
+    </div>
+    <div>
+        <img src="{% static 'images/treatment1.jpg' %}" alt="Makeup Image">
+        <h3><b><a class="nav-link active" aria-current="page" href="{% url 'hair_treatment' %}" style="margin-left:140px;">Hair Treatment</a></b></h3>
+    </div>
+</div>
+{% endblock body %}

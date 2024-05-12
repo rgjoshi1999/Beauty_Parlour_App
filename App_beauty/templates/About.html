@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}About Us{% endblock title %}
+
+{% block body %}
+{% load static %}
+<style>
+
+    #background {
+        background-image: url("{% static 'images/base-backgound.jpg' %}");
+        background-size: cover; /* Cover the entire background */
+        background-position: center; /* Center the background image */
+        height: 100vh; /* Set the height to fill the viewport */
+    }
+
+    /* Custom CSS for About Us section */
+    #about-section {
+        background-color: #f9f9f9;
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    #about-section h2 {
+        font-size: 32px;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    #about-section p {
+        font-size: 18px;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    #about-section strong {
+        color: #B53389; /* Same color as the navbar */
+        font-family: 'Arial', sans-serif; /* Change font to Arial */
+    }
+
+    #about-section .service-item {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+
+    #about-section .service-title {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    #about-section .service-description {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    #about-section .visit-us {
+        margin-top: 50px;
+        background-color: #B53389;
+        color: #fff;
+        padding: 20px 40px;
+        border-radius: 8px;
+        font-size: 20px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    #about-section .visit-us:hover {
+        background-color: #8e1f66;
+    }
+</style>
+
+<div id="background">
+<div id="about-section" class="container my-0">
+    <h2>About Us</h2>
+    <p>Welcome to <strong>Vaishali Beauty Parlour</strong>! We are dedicated to providing top-notch beauty services to our valued customers.</p>
+    <p>Established in <strong>2008</strong>, our beauty parlour has been a trusted destination for those seeking expert beauty treatments and personalized care. With a team of skilled professionals and a commitment to excellence, we strive to enhance your natural beauty and boost your confidence.</p>
+    <h3>Our Mission</h3>
+    <p>At <strong>Vaishali Beauty Parlour</strong>, our mission is to empower individuals by helping them look and feel their best. We believe in using high-quality products and innovative techniques to deliver exceptional results tailored to your unique needs.</p>
+    <h3>Our Services</h3>
+    <p>Explore our wide range of beauty services, including hair styling, skincare treatments, makeup application, and more. Whether you're preparing for a special occasion or simply pampering yourself, our skilled professionals are here to make your beauty dreams a reality.</p>
+    <h3>Visit Us</h3>
+    <p>We invite you to visit our beauty parlour and experience the luxury of our services firsthand. Our welcoming atmosphere and personalized attention ensure that every visit is a relaxing and rejuvenating experience.</p>
+    <p>Thank you for choosing <strong>Vaishali Beauty Parlour</strong>. We look forward to serving you and helping you achieve your beauty goals!</p>
+</div>
+
+{% endblock body %}

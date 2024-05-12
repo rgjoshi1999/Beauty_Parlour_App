@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+{% load static %}
+
+<style>
+    .book-appointment-btn {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    border: none; /* Remove border */
+}
+/* Hover effect */
+.book-appointment-btn:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+}
+    .lipstick1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url("{% static 'images/lipstick1.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+    .wel {
+        color: white;
+        font-style: italic;
+        margin-bottom: 330px; /* Adjust as needed */
+        margin-right: 550px;
+    }
+    .cart {
+        display: flex; /* Use flexbox to arrange cart1 and cart2 side by side */
+        justify-content: space-around; /* Adjust as needed */
+        height: 600px;
+        width: 1520px;
+        background-color: pink;
+    }
+    .cart1 {
+        height: 500px;
+        width: 500px;
+        background-color: white;
+        margin-bottom: 10px;
+        margin-top:50px;
+    }
+    .cart2 {
+        height: 500px;
+        width: 500px;
+        background-color: white;
+        margin-left: 10px; /* Adjust as needed */
+        margin-top:50px;
+    }
+    .cart3{
+        height:50px;
+        width:1520;
+        font-style: italic;
+        font-size: 36px;
+        text-align: center;
+    }
+    .my-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px; /* Rounded corners */
+            transition-duration: 0.4s; /* Smooth transition */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Box shadow */
+        }
+
+</style>
+
+<div class="lipstick1">
+    <h1 class="wel">Welcome to <br><p style="margin-top:20px;">Vaishali Beauty Parlour</p>
+        <br><a class="my-button" href="{% url 'signin' %}">BOOK NOW</a>
+</h1>
+</div>
+
+
+<div class="cart3"> <b>Choose your makeup plan</b></div>
+<div class="cart">
+    <div class="cart1"> <h2 style=" text-align:center; margin-top:40px;">Bridal Makeup</h2>
+      <h1 style="font-size:60px; text-align:center; margin-top:20px;">25,000 RS.</h1>
+    <h4 style="text-align:center; margin-top:40px;">Bridal at Outstation - ₹35000</h4>
+    <h5 style="text-align:center; margin-top:40px;">( According to Distance price )</h5>
+<a class="my-button" style="margin-left:180px; margin-top:60px;" href="{% url 'signin' %}">BOOK NOW</a>
+    </div>
+
+    <div class="cart2"><h2 style="text-align:center; margin-top:40px;"> Party Makeup</h2>
+    <h1 style="font-size:60px; text-align:center; margin-top;">10,000 RS.</h1>
+    <h4 style="text-align:center; margin-top:40px;">Outstation - ₹18000</h4>
+    <h5 style="text-align:center; margin-top:40px;">( According to Distance price )</h5>
+<a class="my-button" style="margin-left:180px; margin-top:60px;" href="{% url 'signin' %}">BOOK NOW</a>
+</div>
+</div>
+
+{% endblock %}

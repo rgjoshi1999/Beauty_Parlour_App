@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Confirmation{% endblock title %}
+
+{% block body %}
+{% load static %}
+<style>
+    /* Custom CSS for the confirmation page */
+    #background {
+        background-image: url("{% static 'images/make7.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+                margin-top:-16px;
+
+
+    }
+
+    .confirmation-container {
+        padding: 50px;
+        text-align: center;
+        background-color: #ffb6c1;
+        margin-top:60px;
+    }
+
+    .confirmation-heading {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+    .confirmation-message {
+        font-size: 24px;
+        margin-bottom: 60px;
+        color: #000;
+    }
+    .confirmation-icon {
+        font-size: 100px;
+        margin-bottom: 20px;
+    }
+    .confirmation-button {
+        background-color: #B53389;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .confirmation-button:hover {
+        background-color: #8C2561;
+    }
+</style>
+<div id="background">
+    <div class="container">
+        <div class="row  mt-3">
+            <div class="col-md-6">
+                <div class="card confirmation-container">
+                    <div class="confirmation-heading">Confirmation</div>
+                    <div class="confirmation-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="confirmation-message">
+                        <h2>Your appointment has been booked successfully.</h2>
+                    </div>
+                   <a href="{% url 'home' %}" class="confirmation-button">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>feedback</title>
+     <style>
+        .content {
+          height: 60vh;
+          width: 100%;
+          background-color: pink;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .footer {
+          height: 200px;
+          width: 100%;
+          background-color:green;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+        }
+    .feed1 form{
+            float:left;
+            height:100vh;
+            width:50%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction: column;
+        background:linear-gradient(to right top, #f9fd50,#FFCAD4, #f9fd50);
+    }
+       .feed1 form label{
+             font-size:20px;
+             font-weight:bold;
+            font-style:italic;
+            line-height: 80px;
+             }
+     .feed1  table caption{
+            caption-side: top;
+            font-size:25px;
+            font-weight:bold;
+            font-style:italic;
+            text-decoration: 3px underline blue;
+            }
+     .feed2{
+             float:none;
+            height:100vh;
+            width:50%;
+        background:linear-gradient(to right top, #f9fd50,#00FFEF, #f9fd50);
+            overflow-y:auto;
+            text-align:center;
+     }
+       .feed2::-webkit-scrollbar {
+            width: 20px;
+            }
+
+      .card{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            height:300px;
+            width:450px;
+            color:black;
+            background:linear-gradient(to right top, white, pink);
+            border-radius:20px;
+            text-align:center;
+            font-size:18px;
+            font-weight:bold;
+            }
+            .hard{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            color:black;
+            }
+
+            .cont{
+            padding:5px;
+            scrollbar-width: 3px;
+            max-height: 100%;
+            overflow-y: auto;
+            }
+            .cont::-webkit-scrollbar {
+            width: 20px;
+            }
+            .neonText {
+                color: #ffffff;
+                text-shadow: 0 0 7px blue, 0 0 10px #ffffff, 0 0 21px #fff,
+                    0 0 42px #0fa, 0 0 82px black, 0 0 92px white, 0 0 102px whitesmoke,
+                    0 0 151px white;
+            }
+    </style>
+</head>
+<body>
+{% block title %}
+<div class="home">
+    <h1 style="margin-left:650px;">FEEDBACK</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="feedpage">
+    <div class="feed1">
+        <form method="post" novalidate>
+            {% csrf_token%}
+            <table>
+                <caption>Write Your Feedback Here :</caption>
+                {% for i in feedback %}
+                <tr>
+                    <td>{{i.label_tag}}</td>
+                    {% if i.name == 'username' %}
+                            {% if user.is_authenticated %}
+                                <td><input type="text" name="{{ i.name }}" value="{{ user.username }}" readonly></td>
+                            {% else %}
+                                <td><input type="text" name="{{ i.name }}" readonly></td>
+                            {% endif %}
+                        {% else %}
+                    <td>{{i}}</td>
+                          {% endif %}
+                    <td>{{i.errors}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <input type="submit">
+        </form>
+    </div>
+    <div class="feed2">
+        <div class="hard">
+            <h3> Customer Reviews :</h3>
+            {% for i in show %}
+            <div class="card">
+                <br><br>
+                Student : {{i.username}}<br><br>
+                <div class="cont">
+                    {{i.feedback}}<br><br>
+                </div>
+                {{i.created_date}}<br><br>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+   {% if not user.is_authenticated %}
+        <script>
+            alert("Please Sign-in to provide feedback.");
+             window.location.href = "{% url 'signin' %}";
+        </script>
+    {% endif %}
+{% endblock %}
+</body>
+</html>

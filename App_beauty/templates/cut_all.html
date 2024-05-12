@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}About Us{% endblock title %}
+
+{% block body %}
+<style>
+    /* Centering the scrollable box horizontally */
+    .container {
+        display: flex;
+        flex-direction: column; /* Set flex direction to column */
+        margin-left: 120px; /* Adjusted margin-left for centering */
+        align-items: center; /* Vertically center items */
+        height: 100vh; /* Set height to 100% of viewport height */
+        color: white; /* Set text color */
+    }
+
+    .scroll-container {
+        max-height: 400px; /* Set the maximum height for the container */
+        overflow-y: auto; /* Enable vertical scrolling */
+        border: 3px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        width: 650px;
+    }
+
+    .haircut-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .haircut-list li {
+        margin-bottom: 15px;
+    }
+
+    .haircut-list p {
+        font-size: 25px;
+        margin-left: 40px; /* Adjusted left margin */
+        margin-bottom: 0; /* Removed margin-bottom to prevent extra space */
+    }
+</style>
+{% load static %}
+
+<div style="background-image: url('{% static 'images/back6.jpg' %}'); background-size: cover; background-position: center; width: 100%; height: 600px; position: relative;">
+    <div class="container"> <!-- Added a container div -->
+        <h1 style="margin-top:20px;">Hair Cut Menu</h1>
+
+        <div style="padding: 20px;">
+            <div class="scroll-container" style="margin-top:20px;">
+                <ul class="haircut-list">
+                    <li>
+                        <p>Classic Haircut -------------------- 50 Rs.</p>
+                    </li>
+                    <li>
+                        <p>Layered Haircut -------------------- $35</p>
+                    </li>
+                    <li>
+                        <p>Pixie Cut -------------------------- $30</p>
+                    </li>
+                    <!-- Add more hair cut services as needed -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
